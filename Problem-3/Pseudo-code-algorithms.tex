@@ -1,0 +1,78 @@
+\documentclass[10pt]{article}
+
+\usepackage{fullpage}
+\usepackage[margin=1.5in]{geometry} 
+\usepackage[english]{babel}
+\usepackage{algorithm}
+\usepackage[utf8]{inputenc}
+\usepackage{arevmath}
+\usepackage[noend]{algpseudocode}
+
+
+\title{Problem 3: Pseudo-code and Algorithms}
+\author{Charanpreet Singh Bedi, 40048683}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Following is the pseudo-code for the Beta function:}
+
+\begin{algorithm}
+\caption{Calculate the Beta function}
+\begin{algorithmic}[1]
+
+\Procedure{Beta}{$x,y$}
+    \State System Initialization
+    \State Read input values
+    \If{(x and y $>$ 0)}
+    \State betaNum $\gets \textsc{Gamma}(x) * \textsc{Gamma}(y);$
+    \State betaDen $\gets \textsc{Gamma}(x+y);$
+    \State result $\gets$ betaNum$\div$ betaDen 
+    \State \Return result;
+    \Else
+    \State \Return;
+    \EndIf
+\EndProcedure
+\State
+\Procedure{Gamma}{$num$}
+    \State pi $\gets$ 3.1416; \Comment{Pi value is used in gamma function}
+    \State eBase $\gets$ 2.7183; \Comment{This is the base of natural logarithm}
+    \State varA $\gets$ (2 $\times$ pi) $\div$ num;
+    \State varB $\gets$ num $\div$ eBase;
+    \State squareRoot $\gets$ $\sqrt{varA}$;
+    \State powerUp $\gets$ varB$^{num}$;
+    \State result $\gets$ squareRoot $\times$ powerUp;
+    \State \Return result;
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\section{Algorithms:}
+\subsection{Gamma function and Beta function relation:}
+My first decision is to use the Gamma function for calculating the Beta function, as the implementation becomes much easier. As I have stated in the project-description, the Beta function is closely related to the Gamma function as;
+$$\beta(x,y) = \frac{\gamma(x)\gamma(y)}{\gamma(x+y)}$$
+So, by this it is clear that gamma function helps in calculating the beta function as well.
+\subsection{Algorithms for Gamma function:}
+There are two different algorithms or approximation techniques by which the Gamma function can be calculated. They are \textit{Stirling's Approximation} and \textit{Lanczos approximation}, and for the ease of my project I have decided to go with \textit{Stirling's Approximation}. The reasons for this choice are explained below;
+\begin{itemize}
+    \item \textbf{Stirling's Approximation}: This is basically the approximation for \textit{factorials} which is also very accurate when we are calculating the Gamma function for very small numbers as well, eg. 0.0001, which is one of the reasons to choose this approximation technique. Another reason is that the Big O notation of the  \textit{Stirling's Approximation} is O($\log_2$ n)
+    
+    \item \textbf{Lanczos Approximation}: This is basically for calculating the Gamma function numerically. It focuses more on precision on decimal places and is relatively complex than the \textit{Stirling's Approximation}.
+\end{itemize}
+
+\begin{thebibliography}{}
+
+\bibitem{wikipedia_b}
+Wikiedia: Beta Function,
+\\\texttt{https://en.wikipedia.org/wiki/Beta\_function}
+\bibitem{wikipedia_s}
+Wikiedia: Stirling's approximation,
+\\\texttt{https://en.wikipedia.org/wiki/Stirling\%27s\_approximation}
+\bibitem{wikipedia_l}
+Wikiedia: Lanczos approximation,
+\\\texttt{https://en.wikipedia.org/wiki/Lanczos\_approximation}
+
+\end{thebibliography}
+\end{document}
+
