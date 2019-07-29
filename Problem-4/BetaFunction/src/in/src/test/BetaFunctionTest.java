@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import in.src.calculate.Model;
 
-//unit testing for various functions used in calculating Beta function
+/**
+ * This is the test class for unit testing the application methods
+ * @author Charanpreet Singh Bedi
+ * @version 1.0
+ * @since 2019-07-26
+ */
 public class BetaFunctionTest {
 
 	Model model = new Model();
