@@ -39,7 +39,7 @@ public class Model {
 	 * @param num This is the input for Gamma function
 	 * @return double This returns the gamma function.
 	 */
-	private double calculateGamma(double num) {
+	public double calculateGamma(double num) {
 		
 		double variableA = (PI*2)/num;
 		double variableB = num/EXPONENTIAL;
